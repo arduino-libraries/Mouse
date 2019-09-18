@@ -60,6 +60,17 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
 //================================================================================
 //	Mouse
 
+/* This function is for limiting the input value for x and y
+ * axis to -127 <= x/y <= 127 since this is the allowed value
+ * range for a USB HID device.
+ */
+signed char limit_xy(int const xy)
+{
+  if     (xy < -127) return -127;
+  else if(xy >  127) return 127;
+  else               return xy;
+}
+
 Mouse_::Mouse_(void) : _buttons(0)
 {
     static HIDSubDescriptor node(_hidReportDescriptor, sizeof(_hidReportDescriptor));
@@ -82,12 +93,12 @@ void Mouse_::click(uint8_t b)
 	move(0,0,0);
 }
 
-void Mouse_::move(signed char x, signed char y, signed char wheel)
+void Mouse_::move(int x, int y, signed char wheel)
 {
 	uint8_t m[4];
 	m[0] = _buttons;
-	m[1] = x;
-	m[2] = y;
+	m[1] = limit_xy(x);
+	m[2] = limit_xy(y);
 	m[3] = wheel;
 	HID().SendReport(1,m,4);
 }
