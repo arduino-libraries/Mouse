@@ -1,7 +1,7 @@
 /*
   ButtonMouseControl
 
-  For Leonardo and Due boards only.
+  For native USB boards (e.g., Leonardo, Micro, MKR, Nano 33 IoT, Zero, Due) only.
 
   Controls the mouse from five pushbuttons on an Arduino Leonardo, Micro or Due.
 
