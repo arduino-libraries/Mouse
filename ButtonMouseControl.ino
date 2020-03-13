@@ -3,7 +3,7 @@
 
   For native USB boards (e.g., Leonardo, Micro, MKR, Nano 33 IoT, Zero, Due) only.
 
-  Controls the mouse from five pushbuttons on an Arduino Leonardo, Micro or Due.
+  Controls the mouse from five pushbuttons.
 
   Hardware:
   - five pushbuttons attached to D2, D3, D4, D5, D6
