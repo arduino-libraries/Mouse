@@ -34,7 +34,7 @@
 
 // set pin numbers for switch, joystick axes, and LED:
 const int switchPin = 2;      // switch to turn on and off mouse control
-const int mouseButton = 3;    // input pin for the mouse pushButton
+const int mouseButton = 3;    // input pin for the mouse pushbutton
 const int xAxis = A0;         // joystick X axis
 const int yAxis = A1;         // joystick Y axis
 const int ledPin = 5;         // Mouse control LED
