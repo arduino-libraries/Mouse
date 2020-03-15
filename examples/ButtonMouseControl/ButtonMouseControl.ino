@@ -13,6 +13,10 @@
 
   WARNING: When you use the Mouse.move() command, the Arduino takes over your
   mouse! Make sure you have control before you use the mouse commands.
+
+  This example code is in the public domain.
+
+  http://www.arduino.cc/en/Tutorial/ButtonMouseControl
 */
 
 #include "Mouse.h"
