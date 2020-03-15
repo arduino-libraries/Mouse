@@ -13,6 +13,7 @@
 
   WARNING: When you use the Mouse.move() command, the Arduino takes over your
   mouse! Make sure you have control before you use the mouse commands.
+*/
 
 #include "Mouse.h"
 
