@@ -5,11 +5,13 @@ on:
   push:
     paths:
       - ".github/workflows/compile-examples.yml"
+      - "library.properties"
       - "examples/**"
       - "src/**"
   pull_request:
     paths:
       - ".github/workflows/compile-examples.yml"
+      - "library.properties"
       - "examples/**"
       - "src/**"
   schedule:
@@ -22,6 +24,10 @@ jobs:
   build:
     name: ${{ matrix.board.fqbn }}
     runs-on: ubuntu-latest
+
+    env:
+      BUILT_IN_EXAMPLES_PATH: extras/arduino-examples
+      SKETCHES_REPORTS_PATH: sketches-reports
 
     strategy:
       fail-fast: false
@@ -76,3 +82,12 @@ jobs:
             # See: https://github.com/arduino/compile-sketches#libraries
           sketch-paths: |
             - ${{ env.BUILT_IN_EXAMPLES_PATH }}/examples/09.USB/Mouse
+          enable-deltas-report: true
+          sketches-report-path: ${{ env.SKETCHES_REPORTS_PATH }}
+
+      - name: Save sketches report as workflow artifact
+        uses: actions/upload-artifact@v2
+        with:
+          if-no-files-found: error
+          path: ${{ env.SKETCHES_REPORTS_PATH }}
+          name: ${{ env.SKETCHES_REPORTS_PATH }}
