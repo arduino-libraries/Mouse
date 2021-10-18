@@ -225,7 +225,7 @@ int readAxis(int axisNumber) {
     distance = (reading - center);
   }
 
-  // The Y axis needs to be inverted in order to map the movemment correctly
+  // The Y axis needs to be inverted in order to map the movement correctly
   if (axisNumber == 1) {
     distance = -distance;
   }
@@ -319,7 +319,7 @@ Mouse.press(button)
 
 #### Parameters
 
-* `button`: which mouse button was realeased (MOUSE_LEFT, MOUSE_RIGHT or MOUSE_MIDDLE, default is MOUSE_LEFT).
+* `button`: which mouse button was released (MOUSE_LEFT, MOUSE_RIGHT or MOUSE_MIDDLE, default is MOUSE_LEFT).
 
 #### Returns
 
@@ -377,7 +377,7 @@ Mouse.isPressed(button);
 
 #### Parameters
 
-* `button`: which mouse button was realeased (MOUSE_LEFT, MOUSE_RIGHT or MOUSE_MIDDLE, default is MOUSE_LEFT).
+* `button`: which mouse button was released (MOUSE_LEFT, MOUSE_RIGHT or MOUSE_MIDDLE, default is MOUSE_LEFT).
 
 #### Returns
 
