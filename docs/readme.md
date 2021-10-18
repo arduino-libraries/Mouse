@@ -1,5 +1,4 @@
-# Mouse
-
+# Mouse library
 
 The mouse functions enable 32u4 or SAMD micro based boards to control cursor movement on a connected computer through their micro’s native USB port. When updating the cursor position, it is always relative to the cursor’s previous location.
 
