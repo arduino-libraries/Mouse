@@ -57,10 +57,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Checkout built-in examples
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: arduino/arduino-examples
           path: ${{ env.BUILT_IN_EXAMPLES_PATH }}
